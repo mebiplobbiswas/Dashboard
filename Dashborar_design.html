@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>   
+    <title>Dashboard</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            background-color: #ECF0F1;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #2C3E50;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .sidebar h2 i {
+            font-size: 32px; 
+            margin-right: 10px; 
+        }
+        .sidebar ul {
+            list-style: none;
+            padding-left: 0; 
+        }
+        .sidebar ul li {
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; 
+        }
+        .sidebar ul li:hover {
+            background-color: #1ABC9C;
+        }
+        .sidebar ul li i {
+            margin-right: 15px; 
+            font-size: 18px; 
+        }
+        .main-content {
+            margin-left: 250px;
+            width: calc(100% - 250px);
+            display: flex;
+            flex-direction: column;
+        }
+        .topbar {
+            height: 60px;
+            background-color: #13537e;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            color: whitesmoke;
+        }
+        .content {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 20px; 
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar ul li .right-icon {
+            margin-left: auto; 
+            width: 40px; 
+            height: 30px;
+            background-color: #e87408; 
+            border-radius: 70%; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px; 
+        }
+        
+
+        .total-student-card {
+            background: #13537e; 
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .total-student-card i {
+            font-size: 40px;
+        }
+        .total-student-card .student-count {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        /* Table Styling */
+        table {
+            width: 98%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: rgb(135, 170, 184); 
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #13537e; 
+            color: white; 
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .col-12 {
+            grid-column: span 4; 
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div>
+            <h2><i class="fas fa-book-reader"></i> ড্যাশবোর্ড </h2> 
+            <ul>
+                <li><i class="fas fa-chalkboard-teacher"></i> ক্লাস জয়েনিং </li>
+                <li><i class="fas fa-book"></i> আমার কোর্স </li>               
+                <li><i class="fas fa-cogs"></i> বান্ডেল কোর্স  <span class="right-icon">নতুন</span></li>
+                <li><i class="fas fa-video"></i> রেকর্ডিং </li>
+                <li><i class="fas fa-book-reader"></i> রিসোর্স </li>
+                <li><i class="fas fa-book"></i> Built My CV <span class="right-icon">নতুন</span></li></li>
+            </ul>
+        </div>
+        <div>
+            <p style="text-align:center; font-size: 12px;">&copy; 2025 Dashboard</p>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="topbar">
+            <h3><i class="fas fa-book"></i> ASP.Net Core সহ ফুল স্ট্যাক ওয়েব ডেভেলপমেন্টে আপনাকে স্বাগতম।</h3>
+            <h5 style="padding-left: 25%;"><i class="fas fa-book"></i> পরীক্ষার ১ম সপ্তাহের অ্যাসাইনমেন্ট</h5>
+        </div>
+        <div class="content">
+           
+            <div class="card total-student-card">
+                <div>
+                    <h3>মোট  </h3>
+                    <p>শিক্ষার্থী নথিভুক্ত</p>
+                </div>
+                <div class="student-count">
+                    ৫০
+                </div>
+                <i class="fas fa-users"></i>
+            </div>
+
+          
+            <div class="card total-student-card">
+                <div>
+                    <h3>সক্রিয় কোর্স</h3>
+                    <p>বর্তমানে কোর্সগুলি</p>
+                </div>
+                <div class="student-count">
+                    ৮
+                </div>
+                <i class="fas fa-book"></i>
+            </div>
+
+           
+            <div class="card total-student-card">
+                <div>
+                    <h3>আসন্ন ক্লাস</h3>
+                    <p>পরবর্তী নির্ধারিত ক্লাস</p>
+                </div>
+                <div class="student-count">
+                    ৫
+                </div>
+                <i class="fas fa-calendar-day"></i>
+            </div>
+
+           
+            <div class="card total-student-card">
+                <div>
+                    <h3>শিক্ষার্থীদের মতামত</h3>
+                    <p>থেকে প্রতিক্রিয়া</p>
+                </div>
+                <div class="student-count">
+                    ৯৫%
+                </div>
+                <i class="fas fa-comment-dots"></i>
+            </div>
+        </div>
+
+       
+        <div class="col-12" style="padding-left: 25px;">
+            <table >
+                <thead>
+                    <tr>
+                        <th>ক্রমিক নং</th>
+                        <th>শিক্ষার্থীর নাম</th>
+                        <th>কোর্সের নাম</th>
+                        <th style="text-align: center;">তালিকাভুক্তির অবস্থা</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>১ </td>
+                        <td>বিপ্লব  </td>
+                        <td>ফুল স্ট্যাক ওয়েব ডেভেলপমেন্ট</td>
+                        <td style="text-align: center;">নথিভুক্ত</td>
+                    </tr>
+                    <tr>
+                        <td>২ </td>
+                        <td>করিম </td>
+                        <td>মেশিন লার্নিং</td>
+                        <td style="text-align: center;"> সম্পন্ন</td>
+                    </tr>
+                    <tr>
+                        <td>৩ </td>
+                        <td>কাদের </td>
+                        <td>তথ্য বিজ্ঞান</td>
+                        <td style="text-align: center;">নথিভুক্ত</td>
+                    </tr>
+                    <tr>
+                        <td>৪</td>
+                        <td>জাকির</td>
+                        <td>ওয়েব ডিজাইন</td>
+                        <td style="text-align: center;">সম্পন্ন</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
